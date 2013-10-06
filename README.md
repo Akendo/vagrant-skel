@@ -1,11 +1,11 @@
 # vagrant-skel #
 
-Simple Vagrant environment to fast bootstrap a puppetmaster.
+Simple Vagrant environment to bootstrap a puppetmaster quickly.
 
 ## About ##
 
-This is a simple skel project that allows to get a fast Vagrant environment based
-on a Ubuntu 12.04 up. Including a puppetmaster in the latest version of puppet
+This is a simple skel project that allows to set up a fast Vagrant environment, based
+on Ubuntu 12.04 and up. This includes a puppetmaster in the latest version of puppet
 and one additional VM.
 
 ## How to use ##
@@ -26,16 +26,15 @@ For example, modify the `manifests/nodes.pp` and add the `vim` package:
         }
     }
 
-Getting the latest changes to the VM:
+### Getting the latest changes to the VM:
 
     vagrant ssh example -c 'sudo puppet agent -v -t'
-
 
 ## Caveats ##
 
 I apply a small hack to save some bandwidth, the `/var/cache/apt/archives/` will
 be mount in the local folder `tmp/`. Sometimes this causes issues with the installation
-of packages. Delete them or even disable the `synced_folder` inside of the `Vagrantfile` 
+of packages. Emptying the `tmp/` folder or disabling the `synced_folder` inside of the `Vagrantfile` 
 may solve it.
 
 ## License and Author ##
