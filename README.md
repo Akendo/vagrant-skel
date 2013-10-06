@@ -38,9 +38,14 @@ be mount in the local folder `tmp/`. Sometimes this causes issues with the insta
 of packages. Delete them or even disable the `synced_folder` inside of the `Vagrantfile` 
 may solve it.
 
+## Thanks and ToDo's ##
+
+Thanks for reviewing to Griffin Boyce.
+ToDo: Introducing Travis
+
 ## License and Author ##
 
-Author:: Alex Sla < 4k3nd0@gmail.com
+Author:: Alex Sla < 4k3nd0@gmail.com >
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
