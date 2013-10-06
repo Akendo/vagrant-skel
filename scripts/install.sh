@@ -25,6 +25,7 @@ ssl_client_verify_header = SSL_CLIENT_VERIFY
 [agent]
 certname = $HOSTNAME
 server = puppetmaster.vbox.net
+EOF
 }
 
 function puppetlabs_repo () {
@@ -38,18 +39,18 @@ function apt_update () {
 
 function apt_install_puppetmaster {
   apt-get install -y \
-  puppetmaster=3.2.4-1puppetlabs1\
-  puppetmaster-common=3.2.4-1puppetlabs1 \
-  puppet-common=3.2.4-1puppetlabs1 \
-  puppet=3.2.4-1puppetlabs1 \
-  puppetdb=1.4.0-1puppetlabs1 \
-  puppetdb-terminus=1.4.0-1puppetlabs1 \
+  puppetmaster\
+  puppetmaster-common \
+  puppet-common \
+  puppet \
+  puppetdb \
+  puppetdb-terminus
 
   apt-get install -y git git-man liberror-perl patch
 }
 
 function apt_install_puppetagent {
-  apt-get install -y puppet=3.2.4-1puppetlabs1 puppet-common=3.2.4-1puppetlabs1
+  apt-get install -y puppet puppet-common
 }
 
 function setup_puppetmaster {
@@ -98,7 +99,7 @@ else
   apt_install_puppetagent
   connect_to_puppetmaster
 fi;
-sleep 20
+sleep 20 # Bad solution. PuppetDB need some time to get running.
 run_puppet_agent
 
 
