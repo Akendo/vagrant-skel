@@ -8,21 +8,21 @@ $hosts = {
 def mk_etc_hosts_of name
 <<-EOF
 echo "
-  127.0.0.1   localhost
-  127.0.1.1   #{$hosts[name][:fqdn]}
+127.0.0.1   localhost
+127.0.1.1   #{$hosts[name][:fqdn]} #{name}
 
-  # The following lines are desirable for IPv6 capable hosts
-  ::1     localhost ip6-localhost ip6-loopback
-  fe00::0 ip6-localnet
-  ff00::0 ip6-mcastprefix
-  ff02::1 ip6-allnodes
-  ff02::2 ip6-allrouters
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
 
-  # all hosts:
-  #{
-    $hosts.map{|k,v| v[:ip]+" "+v[:fqdn]}.
-      join("\n")
-  }
+# all hosts:
+#{
+  $hosts.map{|k,v| v[:ip]+" "+v[:fqdn]}.
+    join("\n")
+}
 " > /etc/hosts
 EOF
 end
