@@ -38,8 +38,9 @@ Vagrant.configure("2") do |config|
    # Small hack for development, mounting the apt cache to a local tmp folder
    # to accell the process of fetching mysql packges.
    vm_settings.vm.synced_folder "./tmp", "/var/cache/apt/archives/"
-   vm_settings.vm.synced_folder "../.", "/etc/puppet/modules/exampleing"
+   #vm_settings.vm.synced_folder "../.", "/etc/puppet/modules/exampleing"
    vm_settings.vm.synced_folder "./manifests", "/etc/puppet/manifests"
+   vm_settings.vm.synced_folder "./modules", "/etc/puppet/modules"
    vm_settings.vm.network "private_network", ip: "192.168.56.200"
  end
   config.vm.define :example do |vm_settings|
