@@ -4,7 +4,6 @@
 forge "http://forge.puppetlabs.com"
 
 mod 'etherpad',
-   :git => 'git@github.com:Akendo/puppet-etherpad.git',
-   :ref => 'better-installation'
+   :git => 'git@github.com:Akendo/puppet-etherpad.git'
 
 mod 'puppetlabs/mysql',
