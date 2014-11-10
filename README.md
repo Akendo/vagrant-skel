@@ -10,21 +10,13 @@ and one additional VM.
 
 ## How to use ##
 
+etherpad version:
+To run this you need as well librarian-puppet in version 1.0.1. 
+
 Just run a simple:
 
+	librarian-puppet install
     vagrant up
-
-Feel free to modify everything inside of the `manifests/` folder and then
-run the puppet-agent.
-
-For example, modify the `manifests/nodes.pp` and add the `vim` package:
-
-    node 'example.vbox.net' {
-     # Make sure that the package 'vim' is installed.
-     package { "vim":
-       ensure => installed,
-        }
-    }
 
 ### Getting the latest changes to the VM:
 
@@ -57,3 +49,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
